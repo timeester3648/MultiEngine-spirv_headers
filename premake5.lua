@@ -16,7 +16,7 @@ project "spirv_headers"
 	files {
 		"./**.h",
 		"./**.hpp",
-		"./**.cpp"
+		"./**.hpp11",
 	}
 
  	filter "configurations:Debug"
