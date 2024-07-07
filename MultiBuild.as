@@ -1,0 +1,20 @@
+void main(MultiBuild::Workspace& workspace) {	
+	auto project = workspace.create_project(".");
+	auto properties = project.properties();
+
+	properties.name("spirv_headers");
+	properties.binary_object_kind(MultiBuild::BinaryObjectKind::eNone);
+	properties.license("./LICENSE");
+
+	project.include_own_required_includes(true);
+	project.add_required_project_include({
+		"./include",
+		"./include/spirv/unified1"
+	});
+
+	properties.files({
+		"./**.h",
+		"./**.hpp",
+		"./**.hpp11"
+	});
+}
