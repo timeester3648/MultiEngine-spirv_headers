@@ -202,6 +202,9 @@ spv = {
         'StreamingInterfaceINTEL' : 6154,
         'RegisterMapInterfaceINTEL' : 6160,
         'NamedBarrierCountINTEL' : 6417,
+        'MaximumRegistersINTEL' : 6461,
+        'MaximumRegistersIdINTEL' : 6462,
+        'NamedMaximumRegistersINTEL' : 6463,
     },
 
     'StorageClass' : {
@@ -513,6 +516,7 @@ spv = {
         'NoUnsignedWrap' : 4470,
         'WeightTextureQCOM' : 4487,
         'BlockMatchTextureQCOM' : 4488,
+        'BlockMatchSamplerQCOM' : 4499,
         'ExplicitInterpAMD' : 4999,
         'NodeSharesPayloadLimitsWithAMDX' : 5019,
         'NodeMaxPayloadsAMDX' : 5020,
@@ -1003,6 +1007,7 @@ spv = {
         'TileImageColorReadAccessEXT' : 4166,
         'TileImageDepthReadAccessEXT' : 4167,
         'TileImageStencilReadAccessEXT' : 4168,
+        'CooperativeMatrixLayoutsARM' : 4201,
         'FragmentShadingRateKHR' : 4422,
         'SubgroupBallotKHR' : 4423,
         'DrawParameters' : 4427,
@@ -1032,11 +1037,13 @@ spv = {
         'RoundingModeRTZ' : 4468,
         'RayQueryProvisionalKHR' : 4471,
         'RayQueryKHR' : 4472,
+        'UntypedPointersKHR' : 4473,
         'RayTraversalPrimitiveCullingKHR' : 4478,
         'RayTracingKHR' : 4479,
         'TextureSampleWeightedQCOM' : 4484,
         'TextureBoxFilterQCOM' : 4485,
         'TextureBlockMatchQCOM' : 4486,
+        'TextureBlockMatch2QCOM' : 4498,
         'Float16ImageAMD' : 5008,
         'ImageGatherBiasLodAMD' : 5009,
         'FragmentMaskAMD' : 5010,
@@ -1110,7 +1117,9 @@ spv = {
         'ShaderInvocationReorderNV' : 5383,
         'BindlessTextureNV' : 5390,
         'RayQueryPositionFetchKHR' : 5391,
+        'AtomicFloat16VectorNV' : 5404,
         'RayTracingDisplacementMicromapNV' : 5409,
+        'RawAccessChainsNV' : 5414,
         'SubgroupShuffleINTEL' : 5568,
         'SubgroupBufferBlockIOINTEL' : 5569,
         'SubgroupImageBlockIOINTEL' : 5570,
@@ -1163,6 +1172,7 @@ spv = {
         'DotProductKHR' : 6019,
         'RayCullMaskKHR' : 6020,
         'CooperativeMatrixKHR' : 6022,
+        'ReplicatedCompositesEXT' : 6024,
         'BitInstructions' : 6025,
         'GroupNonUniformRotateKHR' : 6026,
         'FloatControls2' : 6029,
@@ -1184,6 +1194,7 @@ spv = {
         'GroupUniformArithmeticKHR' : 6400,
         'MaskedGatherScatterINTEL' : 6427,
         'CacheControlsINTEL' : 6441,
+        'RegisterLimitsINTEL' : 6460,
     },
 
     'RayFlagsShift' : {
@@ -1299,6 +1310,8 @@ spv = {
     'CooperativeMatrixLayout' : {
         'RowMajorKHR' : 0,
         'ColumnMajorKHR' : 1,
+        'RowBlockedInterleavedARM' : 4202,
+        'ColumnBlockedInterleavedARM' : 4203,
     },
 
     'CooperativeMatrixUse' : {
@@ -1332,6 +1345,24 @@ spv = {
         'WriteThroughINTEL' : 1,
         'WriteBackINTEL' : 2,
         'StreamingINTEL' : 3,
+    },
+
+    'NamedMaximumNumberOfRegisters' : {
+        'AutoINTEL' : 0,
+    },
+
+    'RawAccessChainOperandsShift' : {
+        'RobustnessPerComponentNV' : 0,
+        'RobustnessPerElementNV' : 1,
+    },
+
+    'RawAccessChainOperandsMask' : {
+        'MaskNone' : 0,
+        'RobustnessPerComponentNV' : 0x00000001,
+        'RobustnessPerElementNV' : 0x00000002,
+    },
+
+    'FPEncoding' : {
     },
 
     'Op' : {
@@ -1683,13 +1714,22 @@ spv = {
         'OpDepthAttachmentReadEXT' : 4161,
         'OpStencilAttachmentReadEXT' : 4162,
         'OpTerminateInvocation' : 4416,
+        'OpTypeUntypedPointerKHR' : 4417,
+        'OpUntypedVariableKHR' : 4418,
+        'OpUntypedAccessChainKHR' : 4419,
+        'OpUntypedInBoundsAccessChainKHR' : 4420,
         'OpSubgroupBallotKHR' : 4421,
         'OpSubgroupFirstInvocationKHR' : 4422,
+        'OpUntypedPtrAccessChainKHR' : 4423,
+        'OpUntypedInBoundsPtrAccessChainKHR' : 4424,
+        'OpUntypedArrayLengthKHR' : 4425,
+        'OpUntypedPrefetchKHR' : 4426,
         'OpSubgroupAllKHR' : 4428,
         'OpSubgroupAnyKHR' : 4429,
         'OpSubgroupAllEqualKHR' : 4430,
         'OpGroupNonUniformRotateKHR' : 4431,
         'OpSubgroupReadInvocationKHR' : 4432,
+        'OpExtInstWithForwardRefsKHR' : 4433,
         'OpTraceRayKHR' : 4445,
         'OpExecuteCallableKHR' : 4446,
         'OpConvertUToAccelerationStructureKHR' : 4447,
@@ -1712,6 +1752,9 @@ spv = {
         'OpCooperativeMatrixStoreKHR' : 4458,
         'OpCooperativeMatrixMulAddKHR' : 4459,
         'OpCooperativeMatrixLengthKHR' : 4460,
+        'OpConstantCompositeReplicateEXT' : 4461,
+        'OpSpecConstantCompositeReplicateEXT' : 4462,
+        'OpCompositeConstructReplicateEXT' : 4463,
         'OpTypeRayQueryKHR' : 4472,
         'OpRayQueryInitializeKHR' : 4473,
         'OpRayQueryTerminateKHR' : 4474,
@@ -1723,6 +1766,10 @@ spv = {
         'OpImageBoxFilterQCOM' : 4481,
         'OpImageBlockMatchSSDQCOM' : 4482,
         'OpImageBlockMatchSADQCOM' : 4483,
+        'OpImageBlockMatchWindowSSDQCOM' : 4500,
+        'OpImageBlockMatchWindowSADQCOM' : 4501,
+        'OpImageBlockMatchGatherSSDQCOM' : 4502,
+        'OpImageBlockMatchGatherSADQCOM' : 4503,
         'OpGroupIAddNonUniformAMD' : 5000,
         'OpGroupFAddNonUniformAMD' : 5001,
         'OpGroupFMinNonUniformAMD' : 5002,
@@ -1807,6 +1854,7 @@ spv = {
         'OpConvertUToSampledImageNV' : 5395,
         'OpConvertSampledImageToUNV' : 5396,
         'OpSamplerImageAddressingModeNV' : 5397,
+        'OpRawAccessChainNV' : 5398,
         'OpSubgroupShuffleINTEL' : 5571,
         'OpSubgroupShuffleDownINTEL' : 5572,
         'OpSubgroupShuffleUpINTEL' : 5573,

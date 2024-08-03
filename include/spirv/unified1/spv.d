@@ -73,6 +73,7 @@ enum SourceLanguage : uint
     WGSL = 10,
     Slang = 11,
     Zig = 12,
+    Max = 0x7fffffff,
 }
 
 enum ExecutionModel : uint
@@ -100,6 +101,7 @@ enum ExecutionModel : uint
     CallableNV = 5318,
     TaskEXT = 5364,
     MeshEXT = 5365,
+    Max = 0x7fffffff,
 }
 
 enum AddressingModel : uint
@@ -109,6 +111,7 @@ enum AddressingModel : uint
     Physical64 = 2,
     PhysicalStorageBuffer64 = 5348,
     PhysicalStorageBuffer64EXT = 5348,
+    Max = 0x7fffffff,
 }
 
 enum MemoryModel : uint
@@ -118,6 +121,7 @@ enum MemoryModel : uint
     OpenCL = 2,
     Vulkan = 3,
     VulkanKHR = 3,
+    Max = 0x7fffffff,
 }
 
 enum ExecutionMode : uint
@@ -214,6 +218,10 @@ enum ExecutionMode : uint
     StreamingInterfaceINTEL = 6154,
     RegisterMapInterfaceINTEL = 6160,
     NamedBarrierCountINTEL = 6417,
+    MaximumRegistersINTEL = 6461,
+    MaximumRegistersIdINTEL = 6462,
+    NamedMaximumRegistersINTEL = 6463,
+    Max = 0x7fffffff,
 }
 
 enum StorageClass : uint
@@ -253,6 +261,7 @@ enum StorageClass : uint
     CodeSectionINTEL = 5605,
     DeviceOnlyINTEL = 5936,
     HostOnlyINTEL = 5937,
+    Max = 0x7fffffff,
 }
 
 enum Dim : uint
@@ -265,6 +274,7 @@ enum Dim : uint
     Buffer = 5,
     SubpassData = 6,
     TileImageDataEXT = 4173,
+    Max = 0x7fffffff,
 }
 
 enum SamplerAddressingMode : uint
@@ -274,12 +284,14 @@ enum SamplerAddressingMode : uint
     Clamp = 2,
     Repeat = 3,
     RepeatMirrored = 4,
+    Max = 0x7fffffff,
 }
 
 enum SamplerFilterMode : uint
 {
     Nearest = 0,
     Linear = 1,
+    Max = 0x7fffffff,
 }
 
 enum ImageFormat : uint
@@ -326,6 +338,7 @@ enum ImageFormat : uint
     R8ui = 39,
     R64ui = 40,
     R64i = 41,
+    Max = 0x7fffffff,
 }
 
 enum ImageChannelOrder : uint
@@ -350,6 +363,7 @@ enum ImageChannelOrder : uint
     sRGBA = 17,
     sBGRA = 18,
     ABGR = 19,
+    Max = 0x7fffffff,
 }
 
 enum ImageChannelDataType : uint
@@ -373,6 +387,7 @@ enum ImageChannelDataType : uint
     UnormInt101010_2 = 16,
     UnsignedIntRaw10EXT = 19,
     UnsignedIntRaw12EXT = 20,
+    Max = 0x7fffffff,
 }
 
 enum ImageOperandsShift : uint
@@ -397,6 +412,7 @@ enum ImageOperandsShift : uint
     ZeroExtend = 13,
     Nontemporal = 14,
     Offsets = 16,
+    Max = 0x7fffffff,
 }
 
 enum ImageOperandsMask : uint
@@ -436,6 +452,7 @@ enum FPFastMathModeShift : uint
     AllowReassoc = 17,
     AllowReassocINTEL = 17,
     AllowTransform = 18,
+    Max = 0x7fffffff,
 }
 
 enum FPFastMathModeMask : uint
@@ -459,6 +476,7 @@ enum FPRoundingMode : uint
     RTZ = 1,
     RTP = 2,
     RTN = 3,
+    Max = 0x7fffffff,
 }
 
 enum LinkageType : uint
@@ -466,6 +484,7 @@ enum LinkageType : uint
     Export = 0,
     Import = 1,
     LinkOnceODR = 2,
+    Max = 0x7fffffff,
 }
 
 enum AccessQualifier : uint
@@ -473,6 +492,7 @@ enum AccessQualifier : uint
     ReadOnly = 0,
     WriteOnly = 1,
     ReadWrite = 2,
+    Max = 0x7fffffff,
 }
 
 enum FunctionParameterAttribute : uint
@@ -486,6 +506,7 @@ enum FunctionParameterAttribute : uint
     NoWrite = 6,
     NoReadWrite = 7,
     RuntimeAlignedINTEL = 5940,
+    Max = 0x7fffffff,
 }
 
 enum Decoration : uint
@@ -541,6 +562,7 @@ enum Decoration : uint
     NoUnsignedWrap = 4470,
     WeightTextureQCOM = 4487,
     BlockMatchTextureQCOM = 4488,
+    BlockMatchSamplerQCOM = 4499,
     ExplicitInterpAMD = 4999,
     NodeSharesPayloadLimitsWithAMDX = 5019,
     NodeMaxPayloadsAMDX = 5020,
@@ -634,6 +656,7 @@ enum Decoration : uint
     ImplementInRegisterMapINTEL = 6191,
     CacheControlLoadINTEL = 6442,
     CacheControlStoreINTEL = 6443,
+    Max = 0x7fffffff,
 }
 
 enum BuiltIn : uint
@@ -776,12 +799,14 @@ enum BuiltIn : uint
     HitKindFrontFacingMicroTriangleNV = 5405,
     HitKindBackFacingMicroTriangleNV = 5406,
     CullMaskKHR = 6021,
+    Max = 0x7fffffff,
 }
 
 enum SelectionControlShift : uint
 {
     Flatten = 0,
     DontFlatten = 1,
+    Max = 0x7fffffff,
 }
 
 enum SelectionControlMask : uint
@@ -812,6 +837,7 @@ enum LoopControlShift : uint
     NoFusionINTEL = 23,
     LoopCountINTEL = 24,
     MaxReinvocationDelayINTEL = 25,
+    Max = 0x7fffffff,
 }
 
 enum LoopControlMask : uint
@@ -845,6 +871,7 @@ enum FunctionControlShift : uint
     Pure = 2,
     Const = 3,
     OptNoneINTEL = 16,
+    Max = 0x7fffffff,
 }
 
 enum FunctionControlMask : uint
@@ -876,6 +903,7 @@ enum MemorySemanticsShift : uint
     MakeVisible = 14,
     MakeVisibleKHR = 14,
     Volatile = 15,
+    Max = 0x7fffffff,
 }
 
 enum MemorySemanticsMask : uint
@@ -913,6 +941,7 @@ enum MemoryAccessShift : uint
     NonPrivatePointerKHR = 5,
     AliasScopeINTELMask = 16,
     NoAliasINTELMask = 17,
+    Max = 0x7fffffff,
 }
 
 enum MemoryAccessMask : uint
@@ -941,6 +970,7 @@ enum Scope : uint
     QueueFamily = 5,
     QueueFamilyKHR = 5,
     ShaderCallKHR = 6,
+    Max = 0x7fffffff,
 }
 
 enum GroupOperation : uint
@@ -952,6 +982,7 @@ enum GroupOperation : uint
     PartitionedReduceNV = 6,
     PartitionedInclusiveScanNV = 7,
     PartitionedExclusiveScanNV = 8,
+    Max = 0x7fffffff,
 }
 
 enum KernelEnqueueFlags : uint
@@ -959,11 +990,13 @@ enum KernelEnqueueFlags : uint
     NoWait = 0,
     WaitKernel = 1,
     WaitWorkGroup = 2,
+    Max = 0x7fffffff,
 }
 
 enum KernelProfilingInfoShift : uint
 {
     CmdExecTime = 0,
+    Max = 0x7fffffff,
 }
 
 enum KernelProfilingInfoMask : uint
@@ -1048,6 +1081,7 @@ enum Capability : uint
     TileImageColorReadAccessEXT = 4166,
     TileImageDepthReadAccessEXT = 4167,
     TileImageStencilReadAccessEXT = 4168,
+    CooperativeMatrixLayoutsARM = 4201,
     FragmentShadingRateKHR = 4422,
     SubgroupBallotKHR = 4423,
     DrawParameters = 4427,
@@ -1077,11 +1111,13 @@ enum Capability : uint
     RoundingModeRTZ = 4468,
     RayQueryProvisionalKHR = 4471,
     RayQueryKHR = 4472,
+    UntypedPointersKHR = 4473,
     RayTraversalPrimitiveCullingKHR = 4478,
     RayTracingKHR = 4479,
     TextureSampleWeightedQCOM = 4484,
     TextureBoxFilterQCOM = 4485,
     TextureBlockMatchQCOM = 4486,
+    TextureBlockMatch2QCOM = 4498,
     Float16ImageAMD = 5008,
     ImageGatherBiasLodAMD = 5009,
     FragmentMaskAMD = 5010,
@@ -1155,7 +1191,9 @@ enum Capability : uint
     ShaderInvocationReorderNV = 5383,
     BindlessTextureNV = 5390,
     RayQueryPositionFetchKHR = 5391,
+    AtomicFloat16VectorNV = 5404,
     RayTracingDisplacementMicromapNV = 5409,
+    RawAccessChainsNV = 5414,
     SubgroupShuffleINTEL = 5568,
     SubgroupBufferBlockIOINTEL = 5569,
     SubgroupImageBlockIOINTEL = 5570,
@@ -1208,6 +1246,7 @@ enum Capability : uint
     DotProductKHR = 6019,
     RayCullMaskKHR = 6020,
     CooperativeMatrixKHR = 6022,
+    ReplicatedCompositesEXT = 6024,
     BitInstructions = 6025,
     GroupNonUniformRotateKHR = 6026,
     FloatControls2 = 6029,
@@ -1229,6 +1268,8 @@ enum Capability : uint
     GroupUniformArithmeticKHR = 6400,
     MaskedGatherScatterINTEL = 6427,
     CacheControlsINTEL = 6441,
+    RegisterLimitsINTEL = 6460,
+    Max = 0x7fffffff,
 }
 
 enum RayFlagsShift : uint
@@ -1244,6 +1285,7 @@ enum RayFlagsShift : uint
     SkipTrianglesKHR = 8,
     SkipAABBsKHR = 9,
     ForceOpacityMicromap2StateEXT = 10,
+    Max = 0x7fffffff,
 }
 
 enum RayFlagsMask : uint
@@ -1266,6 +1308,7 @@ enum RayQueryIntersection : uint
 {
     RayQueryCandidateIntersectionKHR = 0,
     RayQueryCommittedIntersectionKHR = 1,
+    Max = 0x7fffffff,
 }
 
 enum RayQueryCommittedIntersectionType : uint
@@ -1273,12 +1316,14 @@ enum RayQueryCommittedIntersectionType : uint
     RayQueryCommittedIntersectionNoneKHR = 0,
     RayQueryCommittedIntersectionTriangleKHR = 1,
     RayQueryCommittedIntersectionGeneratedKHR = 2,
+    Max = 0x7fffffff,
 }
 
 enum RayQueryCandidateIntersectionType : uint
 {
     RayQueryCandidateIntersectionTriangleKHR = 0,
     RayQueryCandidateIntersectionAABBKHR = 1,
+    Max = 0x7fffffff,
 }
 
 enum FragmentShadingRateShift : uint
@@ -1287,6 +1332,7 @@ enum FragmentShadingRateShift : uint
     Vertical4Pixels = 1,
     Horizontal2Pixels = 2,
     Horizontal4Pixels = 3,
+    Max = 0x7fffffff,
 }
 
 enum FragmentShadingRateMask : uint
@@ -1302,12 +1348,14 @@ enum FPDenormMode : uint
 {
     Preserve = 0,
     FlushToZero = 1,
+    Max = 0x7fffffff,
 }
 
 enum FPOperationMode : uint
 {
     IEEE = 0,
     ALT = 1,
+    Max = 0x7fffffff,
 }
 
 enum QuantizationModes : uint
@@ -1320,6 +1368,7 @@ enum QuantizationModes : uint
     RND_MIN_INF = 5,
     RND_CONV = 6,
     RND_CONV_ODD = 7,
+    Max = 0x7fffffff,
 }
 
 enum OverflowModes : uint
@@ -1328,12 +1377,14 @@ enum OverflowModes : uint
     SAT = 1,
     SAT_ZERO = 2,
     SAT_SYM = 3,
+    Max = 0x7fffffff,
 }
 
 enum PackedVectorFormat : uint
 {
     PackedVectorFormat4x8Bit = 0,
     PackedVectorFormat4x8BitKHR = 0,
+    Max = 0x7fffffff,
 }
 
 enum CooperativeMatrixOperandsShift : uint
@@ -1343,6 +1394,7 @@ enum CooperativeMatrixOperandsShift : uint
     MatrixCSignedComponentsKHR = 2,
     MatrixResultSignedComponentsKHR = 3,
     SaturatingAccumulationKHR = 4,
+    Max = 0x7fffffff,
 }
 
 enum CooperativeMatrixOperandsMask : uint
@@ -1359,6 +1411,9 @@ enum CooperativeMatrixLayout : uint
 {
     RowMajorKHR = 0,
     ColumnMajorKHR = 1,
+    RowBlockedInterleavedARM = 4202,
+    ColumnBlockedInterleavedARM = 4203,
+    Max = 0x7fffffff,
 }
 
 enum CooperativeMatrixUse : uint
@@ -1366,12 +1421,14 @@ enum CooperativeMatrixUse : uint
     MatrixAKHR = 0,
     MatrixBKHR = 1,
     MatrixAccumulatorKHR = 2,
+    Max = 0x7fffffff,
 }
 
 enum InitializationModeQualifier : uint
 {
     InitOnDeviceReprogramINTEL = 0,
     InitOnDeviceResetINTEL = 1,
+    Max = 0x7fffffff,
 }
 
 enum HostAccessQualifier : uint
@@ -1380,6 +1437,7 @@ enum HostAccessQualifier : uint
     ReadINTEL = 1,
     WriteINTEL = 2,
     ReadWriteINTEL = 3,
+    Max = 0x7fffffff,
 }
 
 enum LoadCacheControl : uint
@@ -1389,6 +1447,7 @@ enum LoadCacheControl : uint
     StreamingINTEL = 2,
     InvalidateAfterReadINTEL = 3,
     ConstCachedINTEL = 4,
+    Max = 0x7fffffff,
 }
 
 enum StoreCacheControl : uint
@@ -1397,6 +1456,32 @@ enum StoreCacheControl : uint
     WriteThroughINTEL = 1,
     WriteBackINTEL = 2,
     StreamingINTEL = 3,
+    Max = 0x7fffffff,
+}
+
+enum NamedMaximumNumberOfRegisters : uint
+{
+    AutoINTEL = 0,
+    Max = 0x7fffffff,
+}
+
+enum RawAccessChainOperandsShift : uint
+{
+    RobustnessPerComponentNV = 0,
+    RobustnessPerElementNV = 1,
+    Max = 0x7fffffff,
+}
+
+enum RawAccessChainOperandsMask : uint
+{
+    MaskNone = 0,
+    RobustnessPerComponentNV = 0x00000001,
+    RobustnessPerElementNV = 0x00000002,
+}
+
+enum FPEncoding : uint
+{
+    Max = 0x7fffffff,
 }
 
 enum Op : uint
@@ -1749,13 +1834,22 @@ enum Op : uint
     OpDepthAttachmentReadEXT = 4161,
     OpStencilAttachmentReadEXT = 4162,
     OpTerminateInvocation = 4416,
+    OpTypeUntypedPointerKHR = 4417,
+    OpUntypedVariableKHR = 4418,
+    OpUntypedAccessChainKHR = 4419,
+    OpUntypedInBoundsAccessChainKHR = 4420,
     OpSubgroupBallotKHR = 4421,
     OpSubgroupFirstInvocationKHR = 4422,
+    OpUntypedPtrAccessChainKHR = 4423,
+    OpUntypedInBoundsPtrAccessChainKHR = 4424,
+    OpUntypedArrayLengthKHR = 4425,
+    OpUntypedPrefetchKHR = 4426,
     OpSubgroupAllKHR = 4428,
     OpSubgroupAnyKHR = 4429,
     OpSubgroupAllEqualKHR = 4430,
     OpGroupNonUniformRotateKHR = 4431,
     OpSubgroupReadInvocationKHR = 4432,
+    OpExtInstWithForwardRefsKHR = 4433,
     OpTraceRayKHR = 4445,
     OpExecuteCallableKHR = 4446,
     OpConvertUToAccelerationStructureKHR = 4447,
@@ -1778,6 +1872,9 @@ enum Op : uint
     OpCooperativeMatrixStoreKHR = 4458,
     OpCooperativeMatrixMulAddKHR = 4459,
     OpCooperativeMatrixLengthKHR = 4460,
+    OpConstantCompositeReplicateEXT = 4461,
+    OpSpecConstantCompositeReplicateEXT = 4462,
+    OpCompositeConstructReplicateEXT = 4463,
     OpTypeRayQueryKHR = 4472,
     OpRayQueryInitializeKHR = 4473,
     OpRayQueryTerminateKHR = 4474,
@@ -1789,6 +1886,10 @@ enum Op : uint
     OpImageBoxFilterQCOM = 4481,
     OpImageBlockMatchSSDQCOM = 4482,
     OpImageBlockMatchSADQCOM = 4483,
+    OpImageBlockMatchWindowSSDQCOM = 4500,
+    OpImageBlockMatchWindowSADQCOM = 4501,
+    OpImageBlockMatchGatherSSDQCOM = 4502,
+    OpImageBlockMatchGatherSADQCOM = 4503,
     OpGroupIAddNonUniformAMD = 5000,
     OpGroupFAddNonUniformAMD = 5001,
     OpGroupFMinNonUniformAMD = 5002,
@@ -1873,6 +1974,7 @@ enum Op : uint
     OpConvertUToSampledImageNV = 5395,
     OpConvertSampledImageToUNV = 5396,
     OpSamplerImageAddressingModeNV = 5397,
+    OpRawAccessChainNV = 5398,
     OpSubgroupShuffleINTEL = 5571,
     OpSubgroupShuffleDownINTEL = 5572,
     OpSubgroupShuffleUpINTEL = 5573,
@@ -2129,6 +2231,7 @@ enum Op : uint
     OpGroupLogicalXorKHR = 6408,
     OpMaskedGatherINTEL = 6428,
     OpMaskedScatterINTEL = 6429,
+    Max = 0x7fffffff,
 }
 
 
